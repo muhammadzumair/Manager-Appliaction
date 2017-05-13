@@ -35,7 +35,33 @@ class EmployeeEdit extends Component {
     render() {
         return (
             <ScrollView>
-                
+                <Card>
+                    <EmployeeForm />
+                    <CardSection>
+                        <Button onPress={this.onButtonPress.bind(this)}>
+                            Save Changes
+                    </Button>
+                    </CardSection>
+                    <CardSection>
+                        <Button onPress={this.onTextPress.bind(this)}>
+                            Text Schedule
+                    </Button>
+                    </CardSection>
+
+                    <CardSection>
+                        <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
+                            Fire Employee
+                    </Button>
+                    </CardSection>
+
+                    <Confirm
+                        visible={this.state.showModal}
+                        onAccept={this.onAccept.bind(this)}
+                        onDecline={this.onDecline.bind(this)}
+                    >
+                        Are you sure you want to delete this?
+                </Confirm>
+                </Card>
             </ScrollView>
         );
     }

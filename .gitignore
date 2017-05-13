@@ -1,4 +1,4 @@
 node_modules/
 .expo/
-src/components/EmployeeEdit.js
+./src/components/EmployeeEdit.js
 npm-debug.*
